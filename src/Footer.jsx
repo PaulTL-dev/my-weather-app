@@ -6,8 +6,8 @@ function Footer() {
       <footer>
         <p id="copyRight">
           <span className="copyright">
-            Ward Name. &copy; 2024 Paul.TLX. All rights reserved. Designed and
-            Maintained By <strong>Tebuho Paul, SIN: 2210296779</strong>
+            &copy; 2024 <strong>Tebuho Paul, SIN: 2210296779</strong> All rights
+            reserved.
           </span>
         </p>
         <ul>

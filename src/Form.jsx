@@ -1,7 +1,7 @@
 import { useState } from "react";
 function Form({ displayWeatherData, displayForecastData }) {
   const [cityName, setCityName] = useState("");
-  const apikey = "89e05916ae724d34b8c58f8a64c27519";
+  const apikey = "YOUR_API_KEY_HERE"; // Replace with your actual OpenWeatherMap API key
   function handleOnChange(event) {
     setCityName(event.target.value);
   }
@@ -33,7 +33,9 @@ function Form({ displayWeatherData, displayForecastData }) {
 
       if (!responseObject.ok) {
         throw new Error(
-          displayErrorMessage(`Error ${responseObject.status} : City Not Found`)
+          displayErrorMessage(
+            `Error ${responseObject.status} : City Not Found`,
+          ),
         );
       }
       return await responseObject.json();
@@ -54,15 +56,15 @@ function Form({ displayWeatherData, displayForecastData }) {
       if (!responseforecast.ok) {
         throw new Error(
           displayErrorMessage(
-            `${responseObject.status} : City Not Found for WeatherForecast`
-          )
+            `${responseObject.status} : City Not Found for WeatherForecast`,
+          ),
         );
       }
       return await responseforecast.json();
     } catch (error) {
       if (error instanceof TypeError) {
         displayErrorMessage(
-          "NETWORK ERROR : No Internet connection for WeatherForecast"
+          "NETWORK ERROR : No Internet connection for WeatherForecast",
         );
       } else {
         console.log(error.name);
